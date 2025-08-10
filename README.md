@@ -1,6 +1,11 @@
 # Chassis
 
 [![Build](https://github.com/pyzamo/chassis-cli/actions/workflows/build.yml/badge.svg)](https://github.com/pyzamo/chassis-cli/actions/workflows/build.yml)
+[![Go Report Card](https://goreportcard.com/badge/github.com/pyzamo/chassis-cli)](https://goreportcard.com/report/github.com/pyzamo/chassis-cli)
+[![Release](https://img.shields.io/github/v/release/pyzamo/chassis-cli)](https://github.com/pyzamo/chassis-cli/releases/latest)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Go Version](https://img.shields.io/badge/go-%3E%3D1.24-blue)](https://go.dev/doc/install)
+[![Downloads](https://img.shields.io/github/downloads/pyzamo/chassis-cli/total)](https://github.com/pyzamo/chassis-cli/releases)
 
 A lightweight CLI tool to scaffold project directory structures from layout definition files.
 
@@ -43,24 +48,22 @@ chassis build layout.txt ./my-project
 ## Usage
 
 ```bash
-chassis build <layout-file|-> [target-dir]
+chassis build <layout-file> <target-dir>
 ```
 
 ### Arguments
 
 - `<layout-file>` - Path to layout definition file (or `-` for stdin)
-- `[target-dir]` - Target directory (defaults to current directory)
+- `<target-dir>` - Target directory (defaults to current directory)
 
 ### Options
 
 - `-v, --verbose` - Print every path created/skipped
-- `--indent <int>` - Expected space width for plain-text parser (default: 2, auto-detects tabs)
+- `--indent <int>` - Expected space width for plain-text parser (default: 2)
 
 ## Layout Formats
 
 ### Plain-Text Tree
-
-Simple indented structure using spaces or tabs:
 
 ```
 project/
@@ -77,7 +80,7 @@ project/
 
 ### YAML
 
-Structured YAML format (use `null` for files, `{}` for empty directories):
+Use `null` for files, `{}` for empty directories
 
 ```yaml
 backend:
@@ -96,9 +99,6 @@ frontend:
 ```
 
 ### JSON
-
-JSON format for programmatic generation:
-
 ```json
 {
   "webapp": {
@@ -135,8 +135,7 @@ chassis build -v structure.json app
 ### Real-World Examples
 
 **Go Microservice**
-```bash
-cat > microservice.yaml << 'EOF'
+```yaml
 api:
   cmd:
     server:
@@ -145,37 +144,16 @@ api:
     handlers:
       auth.go: null
       user.go: null
-    middleware:
-      cors.go: null
-      logger.go: null
     models:
       user.go: null
   go.mod: null
   Dockerfile: null
   README.md: null
-EOF
-
-chassis build microservice.yaml my-service
 ```
 
-**React Application**
+Save as `microservice.yaml` and run:
 ```bash
-echo 'frontend/
-  src/
-    components/
-      Header.tsx
-      Footer.tsx
-    pages/
-      Home.tsx
-      About.tsx
-    App.tsx
-    index.tsx
-  public/
-    index.html
-    favicon.ico
-  package.json
-  tsconfig.json
-  .gitignore' | chassis build - my-react-app
+chassis build microservice.yaml my-service
 ```
 
 **Python Package**
