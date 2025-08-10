@@ -32,4 +32,6 @@ go.work.sum
 # .idea/
 # .vscode/
 
+# Project Specific Files
 specs.md
+.cursorrules
