@@ -13,7 +13,7 @@ A lightweight CLI tool to scaffold project directory structures from layout defi
 ### From Source
 
 ```bash
-go install github.com/pyzamo/chassis-cli@latest
+go install github.com/pyzamo/chassis@latest
 ```
 
 ### Pre-built Binaries

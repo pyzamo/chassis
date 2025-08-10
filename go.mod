@@ -1,4 +1,4 @@
-module github.com/pyzamo/chassis-cli
+module github.com/pyzamo/chassis
 
 go 1.24
 

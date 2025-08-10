@@ -5,9 +5,9 @@ import (
 	"io"
 	"os"
 
-	"github.com/pyzamo/chassis-cli/internal/generate"
-	"github.com/pyzamo/chassis-cli/internal/parse"
-	"github.com/pyzamo/chassis-cli/internal/validate"
+	"github.com/pyzamo/chassis/internal/generate"
+	"github.com/pyzamo/chassis/internal/parse"
+	"github.com/pyzamo/chassis/internal/validate"
 	"github.com/spf13/cobra"
 )
 

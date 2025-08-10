@@ -7,7 +7,7 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/pyzamo/chassis-cli/internal/parse"
+	"github.com/pyzamo/chassis/internal/parse"
 )
 
 // ValidationError represents a validation error

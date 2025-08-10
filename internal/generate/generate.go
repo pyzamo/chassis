@@ -7,8 +7,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/pyzamo/chassis-cli/internal/fsutil"
-	"github.com/pyzamo/chassis-cli/internal/parse"
+	"github.com/pyzamo/chassis/internal/fsutil"
+	"github.com/pyzamo/chassis/internal/parse"
 )
 
 // Result contains statistics about the generation process
