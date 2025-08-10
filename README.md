@@ -20,31 +20,9 @@ go install github.com/pyzamo/chassis@latest
 
 Download the latest release for your platform from the [Releases](https://github.com/pyzamo/chassis-cli/releases) page.
 
-## Quick Start
+## Usage
 
 Create a project structure in seconds:
-
-```bash
-# Create a simple layout file
-cat > layout.txt << 'EOF'
-myapp/
-  src/
-    main.go
-    utils/
-      helper.go
-  tests/
-    main_test.go
-  README.md
-EOF
-
-# Build the structure
-chassis build layout.txt
-
-# Or specify a target directory
-chassis build layout.txt ./my-project
-```
-
-## Usage
 
 ```bash
 chassis build <layout-file> <target-dir>
