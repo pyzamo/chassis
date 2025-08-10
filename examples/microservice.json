@@ -1,0 +1,24 @@
+{
+  "service": {
+    "src": {
+      "handlers": {},
+      "models": {},
+      "services": {},
+      "utils": {},
+      "main": null
+    },
+    "tests": {},
+    "config": {
+      "app.yaml": null,
+      "database.yaml": null
+    },
+    "scripts": {
+      "start.sh": null,
+      "test.sh": null
+    },
+    ".dockerignore": null,
+    ".gitignore": null,
+    "Dockerfile": null,
+    "README.md": null
+  }
+}

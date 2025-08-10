@@ -1,0 +1,29 @@
+# Basic Web Application Structure
+# Usage: chassis build basic-webapp.yaml my-app
+
+app:
+  frontend:
+    src:
+      components: {}
+      pages: {}
+      styles: {}
+      index.html: null
+    assets:
+      images: {}
+      fonts: {}
+    package.json: null
+  backend:
+    api:
+      routes: {}
+      controllers: {}
+      models: {}
+    config:
+      database.json: null
+      settings.json: null
+    server.js: null
+    package.json: null
+  docs:
+    README.md: null
+    API.md: null
+  .gitignore: null
+  .env.example: null

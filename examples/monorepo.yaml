@@ -1,0 +1,29 @@
+# Monorepo Structure
+# Usage: chassis build monorepo.yaml my-monorepo
+
+workspace:
+  packages:
+    package-a:
+      src: {}
+      tests: {}
+      package.json: null
+    package-b:
+      src: {}
+      tests: {}
+      package.json: null
+    shared:
+      utils: {}
+      types: {}
+  apps:
+    app-1:
+      src: {}
+      public: {}
+      package.json: null
+    app-2:
+      src: {}
+      config: {}
+      package.json: null
+  docs: {}
+  scripts: {}
+  .gitignore: null
+  README.md: null

@@ -1,0 +1,15 @@
+# Simple Static Site
+# Usage: chassis build static-site.txt my-site
+
+site/
+  index.html
+  about.html
+  contact.html
+  css/
+    style.css
+  js/
+    main.js
+  images/
+  fonts/
+  favicon.ico
+  robots.txt

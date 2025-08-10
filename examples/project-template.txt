@@ -1,0 +1,26 @@
+# Generic Project Template
+# Usage: chassis build project-template.txt my-project
+
+project/
+  src/
+    main/
+      core/
+      utils/
+      config/
+    tests/
+      unit/
+      integration/
+  docs/
+    guides/
+    api/
+    README.md
+  scripts/
+    build.sh
+    deploy.sh
+    test.sh
+  config/
+    development.conf
+    production.conf
+  .gitignore
+  README.md
+  LICENSE

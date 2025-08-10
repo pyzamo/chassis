@@ -1,0 +1,24 @@
+{
+  "api": {
+    "src": {
+      "controllers": {},
+      "models": {},
+      "middleware": {},
+      "routes": {},
+      "utils": {},
+      "app.js": null
+    },
+    "tests": {
+      "unit": {},
+      "integration": {}
+    },
+    "config": {
+      "default.json": null,
+      "production.json": null
+    },
+    ".env.example": null,
+    ".gitignore": null,
+    "package.json": null,
+    "README.md": null
+  }
+}
