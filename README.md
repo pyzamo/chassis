@@ -1,5 +1,7 @@
 # Chassis
 
+[![Build](https://github.com/pyzamo/chassis-cli/actions/workflows/build.yml/badge.svg)](https://github.com/pyzamo/chassis-cli/actions/workflows/build.yml)
+
 A lightweight CLI tool to scaffold project directory structures from layout definition files.
 
 ## Installation

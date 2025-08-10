@@ -1,0 +1,43 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Setup Go
+      uses: actions/setup-go@v5
+      with:
+        go-version: '1.24'
+    
+    - name: Build binaries
+      run: |
+        # Linux AMD64
+        GOOS=linux GOARCH=amd64 go build -o chassis-linux-amd64
+        
+        # macOS AMD64
+        GOOS=darwin GOARCH=amd64 go build -o chassis-darwin-amd64
+        
+        # macOS ARM64 (Apple Silicon)
+        GOOS=darwin GOARCH=arm64 go build -o chassis-darwin-arm64
+        
+        # Windows AMD64
+        GOOS=windows GOARCH=amd64 go build -o chassis-windows-amd64.exe
+    
+    - name: Create Release
+      uses: softprops/action-gh-release@v2
+      with:
+        files: |
+          chassis-linux-amd64
+          chassis-darwin-amd64
+          chassis-darwin-arm64
+          chassis-windows-amd64.exe
+        generate_release_notes: true
