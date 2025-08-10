@@ -1,11 +1,10 @@
 # Chassis
 
 [![Build](https://github.com/pyzamo/chassis-cli/actions/workflows/build.yml/badge.svg)](https://github.com/pyzamo/chassis-cli/actions/workflows/build.yml)
-[![Go Report Card](https://goreportcard.com/badge/github.com/pyzamo/chassis-cli)](https://goreportcard.com/report/github.com/pyzamo/chassis-cli)
 [![Release](https://img.shields.io/github/v/release/pyzamo/chassis-cli)](https://github.com/pyzamo/chassis-cli/releases/latest)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Go Version](https://img.shields.io/badge/go-%3E%3D1.24-blue)](https://go.dev/doc/install)
-[![Downloads](https://img.shields.io/github/downloads/pyzamo/chassis-cli/total)](https://github.com/pyzamo/chassis-cli/releases)
+[![Go Report Card](https://goreportcard.com/badge/github.com/pyzamo/chassis-cli)](https://goreportcard.com/report/github.com/pyzamo/chassis-cli)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A lightweight CLI tool to scaffold project directory structures from layout definition files.
 
