@@ -20,23 +20,47 @@ go install github.com/pyzamo/chassis@latest
 
 Download the latest release for your platform from the [Releases](https://github.com/pyzamo/chassis-cli/releases) page.
 
-## Usage
+## Commands
 
-Create a project structure in seconds:
+### `chassis analyze` - Extract Templates with AI
+
+Analyzes existing projects and uses Google Gemini AI to generate reusable scaffolding templates.
 
 ```bash
-chassis build <layout-file> <target-dir>
+chassis analyze <source> [flags]
 ```
 
-### Arguments
+**Arguments:**
+- `<source>` - Local directory or GitHub repo URL
 
-- `<layout-file>` - Path to layout definition file (or `-` for stdin)
-- `<target-dir>` - Target directory (defaults to current directory)
+**Flags:**
+- `--format string` - Output format: tree, yaml, json (default: tree)
+- `--max-depth int` - Maximum depth to analyze (default: 5)
 
-### Options
+**Examples:**
+```bash
+# Analyze local project
+chassis analyze ./my-app > template.txt
 
+# Analyze GitHub repository
+chassis analyze https://github.com/gin-gonic/gin > gin-template.txt
+```
+
+### `chassis build` - Create Project Structure
+
+Creates directory structure from a layout definition file.
+
+```bash
+chassis build <layout-file> [target-dir]
+```
+
+**Arguments:**
+- `<layout-file>` - Path to layout file (or `-` for stdin)
+- `[target-dir]` - Target directory (defaults to current directory)
+
+**Flags:**
 - `-v, --verbose` - Print every path created/skipped
-- `--indent <int>` - Expected space width for plain-text parser (default: 2)
+- `--indent int` - Space width for plain-text parser (default: 2)
 
 ## Layout Formats
 
@@ -94,22 +118,50 @@ frontend:
 }
 ```
 
-## Examples
-
-### Basic Usage
+## Quick Start
 
 ```bash
-# From a file
-chassis build layout.txt my-project
+# 1. Set up Gemini API key (one-time, get free key at https://aistudio.google.com/app/apikey)
+export GEMINI_API_KEY='your-key-here'
 
-# From stdin
-cat layout.yaml | chassis build - my-project
+# 2. Analyze existing project to extract template
+chassis analyze ./my-project > template.txt
 
-# With verbose output
-chassis build -v structure.json app
+# 3. Create new projects from template
+chassis build template.txt ./new-project
 ```
 
-### Real-World Examples
+## Examples
+
+### Complete Workflow
+
+```bash
+# Extract template from an existing Express.js app
+chassis analyze ./my-express-app > express-template.txt
+
+# app/
+#   # Core application files
+#   server.js
+#   app.js
+#   # Route definitions
+#   routes/
+#     api.js
+#   # Data models
+#   models/
+#     model.js
+#   # Middleware functions
+#   middleware/
+#     auth.js
+#   # Configuration
+#   config/
+#     config.js
+#   package.json
+
+# Create new projects from this template
+chassis build express-template.txt project-1
+```
+
+### Quick Examples
 
 **Go Microservice**
 ```yaml
@@ -159,3 +211,5 @@ Save as `python-package.json` and run:
 ```bash
 chassis build python-package.json
 ```
+
+Contributions are welcome! Please feel free to submit a Pull Request.
