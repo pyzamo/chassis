@@ -15,28 +15,9 @@ import (
 var buildCmd = &cobra.Command{
 	Use:   "build <layout-file|-> [target-dir]",
 	Short: "Build directory structure from a layout definition file",
-	Long: `Build directory structure from a layout definition file.
-	
-The layout file can be in plain-text tree format, YAML, or JSON.
-Format is auto-detected from the file extension.
-
-Use "-" as the layout file to read from stdin.
-If target-dir is not specified, the current directory is used.
-
-Examples:
-  # Build structure in new directory
-  chassis build layout.txt my-project
-  
-  # Build structure in current directory
-  chassis build layout.yaml .
-  
-  # Read layout from stdin
-  echo "src/\n  main.go" | chassis build - .
-  
-  # Build structure with verbose output
-  chassis build -v layout.json my-app`,
-	Args: cobra.RangeArgs(1, 2),
-	RunE: runBuild,
+	Long:  "Build directory structure from a layout definition file. The layout file can be in plain-text tree format, YAML, or JSON. Format is auto-detected from the file extension.",
+	Args:  cobra.RangeArgs(1, 2),
+	RunE:  runBuild,
 }
 
 func init() {
